@@ -15,7 +15,11 @@ interface Line {
   duration: number;
 }
 
-export const HeroImage = () => {
+interface HeroImageProps {
+  src: string;
+}
+
+export const HeroImage = ({ src }: HeroImageProps) => {
   const { ref, inView } = useInView({ threshold: 0.4, triggerOnce: true });
   const [lines, setLines] = useState<Line[]>([]);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -51,7 +55,7 @@ export const HeroImage = () => {
   }, [inView, setLines]);
 
   return (
-    <div ref={ref} className="mt-[12.8rem] [perspective:2000px]">
+    <div ref={ref} className="mt-[4rem]">
       <div
         className={classNames(
           "relative rounded-lg border border-transparent-white bg-white bg-opacity-[0.01] bg-hero-gradient",
@@ -60,7 +64,7 @@ export const HeroImage = () => {
           inView && "before:animate-image-glow"
         )}
       >
-        <div className="absolute top-0 left-0 z-20 h-full w-full">
+        <div className="absolute top-1 left-0 z-20 h-full w-full">
           {lines.map((line) => (
             <span
               key={line.id}
@@ -104,7 +108,7 @@ export const HeroImage = () => {
             "relative z-10 transition-opacity delay-[680ms]",
             inView ? "opacity-100" : "opacity-0"
           )}
-          src="/img/hero.webp"
+          src={src}
           alt="Hero image"
         />
       </div>

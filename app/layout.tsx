@@ -20,10 +20,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <main className="bg-page-gradient pt-navigation-height">
             {children}
           </main>
-          <Footer />
-          <CopyrightLinearBanner />
+          {/* <Footer /> */}
+          {/* <CopyrightLinearBanner /> */}
         </div>
-        <AnalyticsWrapper />
+        {/* <AnalyticsWrapper /> */}
       </body>
     </html>
   );
