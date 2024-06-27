@@ -10,7 +10,5 @@ export const HomepageHero = () => (
     <HeroImage src="/img/test3.jpg" />
     <HeroImage src="/img/test4.jpg" />
     <HeroImage src="/img/test5.jpg" />
-    <HeroImage src="/img/test6.jpg" />
-    <HeroImage src="/img/test7.jpg" />
   </Hero>
 );
